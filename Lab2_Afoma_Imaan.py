@@ -48,7 +48,14 @@ def library_menu():
         if choice == "1":
             title = input("Enter the name of the book: ")
             author = input("Enter the name of the author: ")
-            year = input("Enter the publication year: ")
+            while True:
+                year = input("Enter the publication year: ")
+                if year.isnumeric():
+                    year = int(year)
+                    break
+                else:
+                    print("Please enter a valid numeric value.")
+
             add_books(title, author, year)
 
         # If number 2 is chosen, the program will display the user's reading list.
